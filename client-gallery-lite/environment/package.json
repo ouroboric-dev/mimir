@@ -1,0 +1,12 @@
+{
+  "name": "client-gallery-lite-grader",
+  "private": true,
+  "description": "Grader dependencies for the client-gallery-lite benchmark task",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@playwright/test": "1.63.0",
+    "adm-zip": "0.6.1",
+    "exifr": "7.1.3",
+    "sharp": "0.35.4"
+  }
+}
