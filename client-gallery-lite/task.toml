@@ -1,0 +1,43 @@
+schema_version = "1.4"
+
+# The build: everything in /app is carried from the build machine to the grading copy.
+artifacts = ["/app"]
+
+[task]
+name = "ouroboric-dev/client-gallery-lite"
+version = "4.0.0"
+description = "Build client gallery lite, a private photo-delivery SaaS for photographers, from instruction.md. Graded black-box on a fresh copy of the machine."
+authors = [{ name = "Bruno Guilhermo de Barros Valério", email = "bruno@valerio.dev" }]
+keywords = ["web-app", "saas", "playwright", "security"]
+
+[metadata]
+category = "web-app"
+difficulty = "hard"
+tags = ["yggdrasil-v0", "benchmark-brief-1"]
+# SHA-256 of instruction.md. Any change to the brief makes a new task version.
+brief_sha256 = "bd4b2c7aaf532d51acb3a7edfd5b193d368db8445093b7a24cd80b7ee24d8319"
+# Hidden suite version that scores runs of this task version.
+suite = "v1"
+# Spend limit for one factory build (model and infrastructure costs).
+budget_usd = 100
+
+[agent]
+# Wall-clock limit for one factory build.
+timeout_sec = 28800.0
+
+[environment]
+workdir = "/app"
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+
+[verifier]
+timeout_sec = 1800.0
+# Grade on a fresh copy of the environment, holding only the collected /app.
+environment_mode = "separate"
+
+[verifier.env]
+WORKERS = "4"
+# Category weights for the overall reward; each category scores its share of passing scenarios.
+SCORE_WEIGHTS = "photographer=0.25,client=0.25,dashboard=0.15,security=0.35"
