@@ -15,7 +15,7 @@ category = "web-app"
 difficulty = "easy"
 tags = ["yggdrasil-v0", "smoke"]
 # SHA-256 of instruction.md. Any change to the brief makes a new task version.
-brief_sha256 = "2ec48a63bd3abef7dca7022b61b9f5e2b50087eabb889c08ec83fa113121c003"
+brief_sha256 = "637d14afbc4140df9ce586123a51804ddfc81a70ef1e91ae6fa1662a92f0ef82"
 # Hidden suite version that scores runs of this task version.
 suite = "v1"
 # Spend limit for one factory build (model and infrastructure costs).

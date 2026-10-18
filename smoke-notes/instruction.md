@@ -21,7 +21,7 @@ factory can build, start and secure a whole product.
 The page at `/` holds everything. Use these names exactly.
 
 | Where | Element | Name |
-|---|---|---|
+| --- | --- | --- |
 | Signed out | fields; buttons | "Email", "Password"; "Sign up", "Log in" |
 | Signed in | button | "Log out" |
 | Signed in | field; button | "Note"; "Add note" |
@@ -33,7 +33,7 @@ The page at `/` holds everything. Use these names exactly.
 All bodies are JSON. A missing or wrong session answers 401.
 
 | Request | Answer |
-|---|---|
+| --- | --- |
 | `POST /api/signup` `{"email","password"}` | 201 and a session cookie. 400 for a bad email or a short password. 409 for a used email. |
 | `POST /api/login` `{"email","password"}` | 200 and a session cookie. 401 for a wrong email or password. |
 | `POST /api/logout` | 204. The cookie stops working. |

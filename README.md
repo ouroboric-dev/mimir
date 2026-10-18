@@ -7,7 +7,7 @@ software factory. Each task is a frozen product brief that a factory builds from
 | Task                                          | Version | Brief SHA-256                                                      |
 | --------------------------------------------- | ------- | ------------------------------------------------------------------ |
 | [`client-gallery-lite`](client-gallery-lite/) | 4.0.0   | `bd4b2c7aaf532d51acb3a7edfd5b193d368db8445093b7a24cd80b7ee24d8319` |
-| [`smoke-notes`](smoke-notes/)                 | 1.0.0   | `2ec48a63bd3abef7dca7022b61b9f5e2b50087eabb889c08ec83fa113121c003` |
+| [`smoke-notes`](smoke-notes/)                 | 1.0.0   | `637d14afbc4140df9ce586123a51804ddfc81a70ef1e91ae6fa1662a92f0ef82` |
 
 A task holds:
 
