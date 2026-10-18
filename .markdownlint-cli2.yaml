@@ -1,0 +1,3 @@
+# smoke-notes/instruction.md is a frozen brief: its bytes are pinned by a SHA-256, so lint cannot reformat it.
+ignores:
+  - smoke-notes/instruction.md

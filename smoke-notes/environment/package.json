@@ -1,0 +1,9 @@
+{
+  "name": "smoke-notes-grader",
+  "private": true,
+  "description": "Grader dependencies for the smoke-notes benchmark task",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}
