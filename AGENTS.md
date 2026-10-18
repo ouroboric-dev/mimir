@@ -7,4 +7,6 @@ Public benchmark tasks for Yggdrasil. The company invariants apply:
   task version, made by the founder.
 - Hidden test suites never go in this repo. Only retired suites are published here, by the founder.
 - Never look for, read or reconstruct a task's hidden suite. Build to the brief.
+- A `sample-suite/` is public and is not a hidden suite. Its `reference/` solution only tests the suite; never
+  use it to build a task. Run `scripts/check-task.sh <task-dir>` after any change to a task folder.
 - Check a brief's SHA-256 against the table in `README.md` before running a task.

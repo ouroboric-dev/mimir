@@ -1,0 +1,13 @@
+{
+  "schema": "ygg.suite/v1",
+  "suite": "v1",
+  "scenarios": [
+    { "id": "sign up then log in", "category": "account", "kind": "fail-to-pass" },
+    { "id": "a short password is refused", "category": "account", "kind": "fail-to-pass" },
+    { "id": "log out ends the session", "category": "account", "kind": "pass-to-pass" },
+    { "id": "add and list a note", "category": "notes", "kind": "fail-to-pass" },
+    { "id": "delete a note", "category": "notes", "kind": "fail-to-pass" },
+    { "id": "notes need a session", "category": "security", "kind": "fail-to-pass" },
+    { "id": "another person cannot see or delete my note", "category": "security", "kind": "fail-to-pass" }
+  ]
+}

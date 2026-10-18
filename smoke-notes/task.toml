@@ -1,0 +1,43 @@
+schema_version = "1.4"
+
+# The build: everything in /app is carried from the build machine to the grading copy.
+artifacts = ["/app"]
+
+[task]
+name = "ouroboric-dev/smoke-notes"
+version = "1.0.0"
+description = "Build notes, a tiny private notes web app, from instruction.md. A cheap smoke task for the factory's grader. Graded black-box on a fresh copy of the machine."
+authors = [{ name = "Bruno Guilhermo de Barros Valério", email = "bruno@valerio.dev" }]
+keywords = ["web-app", "smoke", "playwright", "security"]
+
+[metadata]
+category = "web-app"
+difficulty = "easy"
+tags = ["yggdrasil-v0", "smoke"]
+# SHA-256 of instruction.md. Any change to the brief makes a new task version.
+brief_sha256 = "637d14afbc4140df9ce586123a51804ddfc81a70ef1e91ae6fa1662a92f0ef82"
+# Hidden suite version that scores runs of this task version.
+suite = "v1"
+# Spend limit for one factory build (model and infrastructure costs).
+budget_usd = 5
+
+[agent]
+# Wall-clock limit for one factory build.
+timeout_sec = 3600.0
+
+[environment]
+workdir = "/app"
+build_timeout_sec = 600.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 4096
+
+[verifier]
+timeout_sec = 300.0
+# Grade on a fresh copy of the environment, holding only the collected /app.
+environment_mode = "separate"
+
+[verifier.env]
+WORKERS = "2"
+# Category weights for the overall reward; each category scores its share of passing scenarios.
+SCORE_WEIGHTS = "account=0.3,notes=0.3,security=0.4"
