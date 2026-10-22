@@ -17,7 +17,7 @@ tags = ["yggdrasil-v0", "benchmark-brief-1"]
 # SHA-256 of instruction.md. Any change to the brief makes a new task version.
 brief_sha256 = "bd4b2c7aaf532d51acb3a7edfd5b193d368db8445093b7a24cd80b7ee24d8319"
 # Hidden suite version that scores runs of this task version.
-suite = "v1"
+suite = "v2"
 # Spend limit for one factory build (model and infrastructure costs).
 budget_usd = 100
 
