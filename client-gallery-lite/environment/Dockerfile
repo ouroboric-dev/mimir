@@ -13,9 +13,8 @@ FROM mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b7
 # PostgreSQL 18.4, the minor of niflheim-local's postgres image, from the PostgreSQL project's archive
 # (apt-archive.postgresql.org keeps every version; the main repository only the newest). Its key is
 # checked by fingerprint. postgresql-common goes first and is told to make no cluster, as the
-# official postgres image does; the product makes its own.
-ARG PG_VERSION=18.4-1.pgdg24.04+1
-ARG PG_COMMON_VERSION=293.pgdg24.04+1
+# official postgres image does; the product makes its own. The versions are written out: niflheim-local's
+# check-repos --check services compares the Postgres package pin with the realm's postgres image.
 ARG PGDG_FINGERPRINT=B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 RUN set -eux; \
     apt-get update; \
@@ -28,11 +27,11 @@ RUN set -eux; \
       > /etc/apt/sources.list.d/pgdg.list; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
-      "postgresql-common=$PG_COMMON_VERSION" "postgresql-client-common=$PG_COMMON_VERSION"; \
+      postgresql-common=293.pgdg24.04+1 postgresql-client-common=293.pgdg24.04+1; \
     sed -ri 's/#(create_main_cluster) .*$/\1 = false/' /etc/postgresql-common/createcluster.conf; \
     grep -qx 'create_main_cluster = false' /etc/postgresql-common/createcluster.conf; \
     apt-get install -y --no-install-recommends \
-      "postgresql-18=$PG_VERSION" "postgresql-client-18=$PG_VERSION" "libpq5=$PG_VERSION"; \
+      postgresql-18=18.4-1.pgdg24.04+1 postgresql-client-18=18.4-1.pgdg24.04+1 libpq5=18.4-1.pgdg24.04+1; \
     test ! -e /var/lib/postgresql/18/main; \
     rm -rf /var/lib/apt/lists/*
 ENV PATH=/usr/lib/postgresql/18/bin:$PATH
