@@ -5,7 +5,7 @@ artifacts = ["/app"]
 
 [task]
 name = "ouroboric-dev/client-gallery-lite"
-version = "4.0.0"
+version = "4.1.0"
 description = "Build client gallery lite, a private photo-delivery SaaS for photographers, from instruction.md. Graded black-box on a fresh copy of the machine."
 authors = [{ name = "Bruno Guilhermo de Barros Valério", email = "bruno@valerio.dev" }]
 keywords = ["web-app", "saas", "playwright", "security"]
